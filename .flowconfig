@@ -1,0 +1,6 @@
+[ignore]
+.*/build/.*
+.*/client/build/.*
+
+[options]
+esproposal.export_star_as=enable
