@@ -35,7 +35,14 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(session({secret: process.env.SESSION_SECRET}));
+app.use(
+  session({
+    name: 'sid',
+    resave: false,
+    saveUninitialized: false,
+    secret: process.env.SESSION_SECRET
+  })
+);
 
 app.use(routes);
 
